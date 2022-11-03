@@ -16,7 +16,7 @@ class Member(models.Model):
     type = models.CharField(max_length=10)
 
     def __str__(self):
-        return "%s %s" % (self.first_name, self.last_name)
+        return self.first_name + self.last_name
 
 class School(models.Model):
     id = models.AutoField(primary_key=True)
@@ -29,7 +29,7 @@ class School(models.Model):
     deleted_at = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
-        return "%s" % (self.name)
+        return self.name
 
 class Department(models.Model):
     id = models.AutoField(primary_key=True)

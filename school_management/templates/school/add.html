@@ -1,0 +1,12 @@
+<form action="/school/add/" method="post">
+    {% csrf_token %}
+    <label>School Name</label><br>
+    {{form.name}}<br/>
+    <label>Establish Day</label><br>
+    {{form.establish_day}}<br>
+    <label>Volume</label><br>
+    {{form.volume}}<br>
+    <label>Location</label><br>
+    {{form.location}}<br><br>
+    <input type="submit" value="Save">
+</form>

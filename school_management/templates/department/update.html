@@ -1,0 +1,16 @@
+<h1>Update Department</h1>
+<form action="/school/department/update/{{department.id}}/" method="post">
+    {% csrf_token %}
+    <label>Department Name</label><br>
+    <input type="text" name="name" id="id_name" required value="{{department.name}}" /><br />
+    <label>Volume</label><br>
+    <input type="text" name="volume" id="id_volume" required value="{{department.volume}}" /><br />
+    <label>School</label><br>
+    <!-- <input type="text" name="school" id="id_school" required value="{{department.school}}" /><br /> -->
+    <select name="school_name">
+        {% for s in school %}
+        <option value="{{s.id}}" {% if s.id == department.school.id %}selected{% endif %}>{{s.name}}</option>
+        {% endfor %}
+    </select><br><br>
+    <input type="submit" value="Update">
+</form>

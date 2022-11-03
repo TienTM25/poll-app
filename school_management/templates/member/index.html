@@ -1,0 +1,12 @@
+<h1>Member List</h1>
+{% if member %}
+    <ul>
+    {% for mem in member %}
+        <li><a href="{% url 'member_detail' mem.id %}">{{ mem.name }}</a></li>
+        <a href="{% url 'member_edit' mem.id %}">Edit</a>  
+        <a href="{% url 'member_delete' mem.id %}">Delete</a>  
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No member are available.</p>
+{% endif %}

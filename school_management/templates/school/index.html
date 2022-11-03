@@ -1,0 +1,12 @@
+<h1>School List</h1>
+{% if school_list %}
+    <ul>
+    {% for school in school_list %}
+        <li><a href="{% url 'school_detail' school.id %}">{{ school.name }}</a></li>
+        <a href="{% url 'school_edit' school.id %}">Edit</a>  
+        <a href="{% url 'school_delete' school.id %}">Delete</a>  
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No schools are available.</p>
+{% endif %}

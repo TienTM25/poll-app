@@ -1,0 +1,13 @@
+<h1>Update School</h1>
+<form  action="/school/update/{{school.id}}/" method="post">
+    {% csrf_token %}
+    <label>School Name</label><br>
+    <input type="text" name="name" id="id_name" required value="{{school.name}}"/><br/>
+    <label>Establish Day</label><br>
+    <input type="text" name="establish_day" id="id_establish_day" required value="{{school.establish_day | date:'Y-m-d H:i:s'}}"/><br/>
+    <label>Volume</label><br>
+    <input type="text" name="volume" id="id_volume" required value="{{school.volume}}"/><br/>
+    <label>Location</label><br>
+    <input type="text" name="location" id="id_location" required value="{{school.location}}"/><br/><br>
+    <input type="submit" value="Update">
+</form>

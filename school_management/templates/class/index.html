@@ -1,0 +1,12 @@
+<h1>Class List</h1>
+{% if class %}
+    <ul>
+    {% for c in class %}
+        <li><a href="{% url 'class_detail' c.id %}">{{ c.name }}</a></li>
+        <a href="{% url 'class_edit' c.id %}">Edit</a>  
+        <a href="{% url 'class_delete' c.id %}">Delete</a>  
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No class are available.</p>
+{% endif %}

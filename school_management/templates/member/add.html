@@ -1,0 +1,26 @@
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<form action="/school/department/add/" method="post">
+    {% csrf_token %}
+    <label>First Name</label><br>
+    {{form.first_name}}<br/>
+    <label>Last Name</label><br>
+    {{form.last_name}}<br/>
+    <label>Email</label><br>
+    {{form.email}}<br/>
+    <label>Password</label><br>
+    {{form.password}}<br/>
+    <label>DoB</label><br>
+    {{form.date_of_birth}}<br/>
+    <label>Prefecture</label><br>
+    {{form.prefecture}}<br/>
+    <label>Type</label><br>
+    {{form.type}}<br/>
+    <br>
+    <input type="submit" value="Save">
+</form>
